@@ -7,7 +7,6 @@ const cors        = require('cors');
 require('dotenv').config();
 
 const apiRoutes         = require('./routes/api.js');
-const fccTestingRoutes  = require('./routes/fcctesting.js');
 const runner            = require('./test-runner');
 
 const mongoose = require('mongoose');
@@ -37,9 +36,6 @@ app.route('/')
   .get(function (req, res) {
     res.sendFile(process.cwd() + '/views/index.html');
   });
-
-//For FCC testing purposes
-fccTestingRoutes(app);
 
 //Routing for API 
 apiRoutes(app);  
